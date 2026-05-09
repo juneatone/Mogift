@@ -1,0 +1,57 @@
+.panel { margin-top: 0.5rem; display: flex; flex-direction: column; gap: 8px; }
+
+.section {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--warm-white);
+}
+
+.sectionHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  background: transparent;
+  text-align: left;
+}
+
+.sectionHeader:hover { background: var(--sand); }
+
+.chevron { font-size: 0.65rem; color: var(--text-muted); }
+
+.links { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+
+.link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.link:last-child { border-bottom: none; }
+.link:hover { background: var(--sand); }
+
+.linkTitle {
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.linkSource {
+  font-size: 0.72rem;
+  color: var(--brown-light);
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}

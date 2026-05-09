@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { T, activities, funfacts } from './data';
+import ReadingPanel from './ReadingPanel';
+import CookingPanel from './CookingPanel';
+import JournalingPanel from './JournalingPanel';
 import styles from './SuggestScreen.module.css';
 
 function shuffle(arr) {
@@ -83,6 +86,22 @@ export default function SuggestScreen({ lang, prefs, onBack }) {
         <span className={styles.badge}>{t.durationBadge(activity.duration)}</span>
       </div>
 
+      {/* Reading panel */}
+      {activity.category === 'reading' && (
+        <ReadingPanel lang={lang} />
+      )}
+
+      {/* Cooking panel */}
+      {activity.category === 'cooking' && (
+        <CookingPanel lang={lang} />
+      )}
+
+      {/* Journaling panel */}
+      {activity.category === 'journaling' && (
+        <JournalingPanel lang={lang} />
+      )}
+
+      {/* Fun fact panel */}
       {activity.category === 'funfact' && currentFact && (
         <div className={styles.factCard}>
           <div className={styles.factHeader}>
