@@ -36,7 +36,6 @@ const ui = {
   }
 };
 
-// Extract ingredients + measures from MealDB meal object
 function extractIngredients(meal) {
   const items = [];
   for (let i = 1; i <= 20; i++) {
@@ -49,20 +48,17 @@ function extractIngredients(meal) {
   return items;
 }
 
-// Split instructions into steps
 function extractSteps(instructions) {
   if (!instructions) return [];
   return instructions
     .split(/\r\n|\n|\r/)
-    .map(s => s.replace(/^\d+[\.\)]\s*/, '').trim())
+    .map(s => s.replace(/^\d+[\.\/\)]\s*/, '').trim())
     .filter(s => s.length > 10)
     .slice(0, 8);
 }
 
-// Parse vegetable input — take first meaningful word as search term
 function getPrimaryIngredient(input) {
   const cleaned = input.trim().toLowerCase();
-  // Common Marathi -> English mappings
   const marathiMap = {
     'बटाटा': 'potato', 'कांदा': 'onion', 'टोमॅटो': 'tomato',
     'पालक': 'spinach', 'मटार': 'peas', 'गाजर': 'carrot',
@@ -72,7 +68,6 @@ function getPrimaryIngredient(input) {
   for (const [mr, en] of Object.entries(marathiMap)) {
     if (cleaned.includes(mr)) return en;
   }
-  // English — take first word before comma/space
   const first = cleaned.split(/[,،\s]+/)[0];
   return first || cleaned;
 }
@@ -114,7 +109,6 @@ export default function CookingPanel({ lang }) {
     const ingredient = getPrimaryIngredient(veggies);
 
     try {
-      // Step 1: filter by ingredient
       const filterRes = await fetch(
         `https://www.themealdb.com/api/json/v1/1/filter.php?i=${encodeURIComponent(ingredient)}`
       );
@@ -126,7 +120,6 @@ export default function CookingPanel({ lang }) {
         return;
       }
 
-      // Step 2: fetch full details for top 3 results
       const top3 = filterData.meals.slice(0, 3);
       const detailed = await Promise.all(
         top3.map(m =>
@@ -181,7 +174,6 @@ export default function CookingPanel({ lang }) {
 
       {meal && (
         <div className={styles.result}>
-          {/* Meal thumbnail */}
           {meal.strMealThumb && (
             <img
               src={`${meal.strMealThumb}/preview`}
