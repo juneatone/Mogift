@@ -1,0 +1,183 @@
+.container {
+  padding: 2rem 1.5rem 3rem;
+  max-width: 480px;
+  margin: 0 auto;
+  animation: fadeUp 0.45s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.todayLabel {
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: var(--warm-white);
+  border: 1.5px solid var(--sand-dark);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  margin-bottom: 1rem;
+  animation: fadeUp 0.35s ease both;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+}
+
+.cardDesc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--sand);
+  color: var(--brown-dark);
+  letter-spacing: 0.03em;
+}
+
+.factCard {
+  background: var(--teal-light);
+  border: 1.5px solid rgba(90, 140, 130, 0.3);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  animation: fadeUp 0.4s ease 0.1s both;
+}
+
+.factHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.6rem;
+}
+
+.factBulb { font-size: 1rem; }
+
+.factTopic {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--teal);
+}
+
+.factText {
+  font-size: 0.9rem;
+  color: var(--brown-dark);
+  line-height: 1.65;
+  font-weight: 300;
+  margin-bottom: 0.9rem;
+}
+
+.factBtn {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--teal);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(90, 140, 130, 0.4);
+  background: transparent;
+  font-family: var(--font-body);
+}
+
+.factBtn:hover { background: rgba(90, 140, 130, 0.12); }
+
+.doneMsg {
+  background: var(--amber-light);
+  border: 1.5px solid rgba(201, 147, 58, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 0.88rem;
+  color: var(--amber);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  animation: fadeUp 0.3s ease both;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+
+.doneBtn {
+  padding: 13px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  border-radius: var(--radius-sm);
+  background: var(--brown-dark);
+  color: var(--cream);
+}
+
+.doneBtn:hover { background: var(--brown); }
+
+.anotherBtn {
+  padding: 13px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-family: var(--font-body);
+  border-radius: var(--radius-sm);
+  background: var(--warm-white);
+  color: var(--text-secondary);
+  border: 1.5px solid var(--border);
+}
+
+.anotherBtn:hover { border-color: var(--border-hover); }
+
+.weekBox {
+  background: var(--sand);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 1.25rem;
+}
+
+.weekLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.weekStat {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.backBtn {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  padding: 8px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.backBtn:hover { color: var(--text-secondary); }

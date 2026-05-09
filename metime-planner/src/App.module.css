@@ -1,0 +1,33 @@
+.app {
+  min-height: 100vh;
+  background: var(--cream);
+  position: relative;
+}
+
+.langBar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 1rem 1.5rem 0;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.langBtn {
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--border);
+  color: var(--text-muted);
+  background: transparent;
+}
+
+.langBtn:hover { border-color: var(--border-hover); color: var(--text-secondary); }
+
+.langActive {
+  background: var(--brown-dark);
+  border-color: var(--brown-dark);
+  color: var(--cream);
+  font-weight: 500;
+}
